@@ -1,5 +1,5 @@
 //
-//  KeysManager.swift
+//  AuthenticationManager.swift
 //  binet-task
 //
 //  Created by Maksim Nosov on 23/09/2019.
@@ -8,9 +8,20 @@
 
 import Foundation
 
-class KeysManager {
+protocol AuthenticationManagerProtocol: class {
+    func retrieveToken() -> String
+}
+
+class AuthenticationManager {
     
-    func retrieveToken() -> Keys {
+//    lazy var tokenId: String = {
+//        let keys = retrieveToken()
+//        return keys.token
+//    }()
+    
+    init() {}
+    
+    func retrieveToken() -> String {
         guard let url = Bundle.main.url(forResource: "Binet",
                                         withExtension: ".plist") else {
                                             fatalError()
@@ -19,8 +30,8 @@ class KeysManager {
             let data = try Data(contentsOf: url)
             let decoder = PropertyListDecoder()
             let plist = try decoder.decode([String: Keys].self, from: data)
-            guard let token = plist["Keys"] else { fatalError() }
-            return token
+            guard let keys = plist["Keys"] else { fatalError() }
+            return keys.token
         } catch {
             fatalError()
         }
@@ -28,13 +39,13 @@ class KeysManager {
     
 }
 
-extension KeysManager {
-    
-    struct localConstants {
-        private init() {}
-        static let tokenId = "token"
-    }
-    
-}
+//extension AuthenticationManager {
+//
+//    struct localConstants {
+//        private init() {}
+//        static var tokenId = "token"
+//    }
+//
+//}
 
 

@@ -8,28 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		B0FBF11A2339058D00E10865 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FBF1192339058D00E10865 /* AppDelegate.swift */; };
-		B0FBF11C2339058D00E10865 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FBF11B2339058D00E10865 /* SceneDelegate.swift */; };
-		B0FBF11E2339058D00E10865 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FBF11D2339058D00E10865 /* ViewController.swift */; };
-		B0FBF1212339058D00E10865 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0FBF11F2339058D00E10865 /* Main.storyboard */; };
 		B0FBF1232339058E00E10865 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0FBF1222339058E00E10865 /* Assets.xcassets */; };
 		B0FBF1262339058E00E10865 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0FBF1242339058E00E10865 /* LaunchScreen.storyboard */; };
 		B0FBF12E2339076A00E10865 /* Binet.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0FBF12D2339076A00E10865 /* Binet.plist */; };
 		B0FBF131233907AF00E10865 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FBF130233907AF00E10865 /* Keys.swift */; };
-		B0FBF1342339087200E10865 /* KeysManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FBF1332339087200E10865 /* KeysManager.swift */; };
+		B0FBF1342339087200E10865 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FBF1332339087200E10865 /* AuthenticationManager.swift */; };
+		B0FBF13923390C2000E10865 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FBF13823390C2000E10865 /* Constants.swift */; };
+		B0FBF13B23390CF600E10865 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FBF13A23390CF600E10865 /* APIService.swift */; };
+		B0FBF13F23391C3D00E10865 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FBF13E23391C3D00E10865 /* MainViewController.swift */; };
+		B0FBF14223391D3A00E10865 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FBF14123391D3A00E10865 /* UIView+Layout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B0FBF1162339058D00E10865 /* binet-task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "binet-task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FBF1192339058D00E10865 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B0FBF11B2339058D00E10865 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B0FBF11D2339058D00E10865 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B0FBF1202339058D00E10865 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B0FBF1222339058E00E10865 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0FBF1252339058E00E10865 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0FBF1272339058E00E10865 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0FBF12D2339076A00E10865 /* Binet.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Binet.plist; sourceTree = "<group>"; };
 		B0FBF130233907AF00E10865 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
-		B0FBF1332339087200E10865 /* KeysManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysManager.swift; sourceTree = "<group>"; };
+		B0FBF1332339087200E10865 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		B0FBF13823390C2000E10865 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B0FBF13A23390CF600E10865 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		B0FBF13E23391C3D00E10865 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		B0FBF14123391D3A00E10865 /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,16 +64,14 @@
 		B0FBF1182339058D00E10865 /* binet-task */ = {
 			isa = PBXGroup;
 			children = (
+				B0FBF14023391D2F00E10865 /* Helper */,
+				B0FBF13D23391BE000E10865 /* Controller */,
+				B0FBF13C23391A5700E10865 /* Resources */,
 				B0FBF13523390BC700E10865 /* API */,
 				B0FBF1322339082200E10865 /* Managers */,
 				B0FBF12F2339079B00E10865 /* Model */,
 				B0FBF1192339058D00E10865 /* AppDelegate.swift */,
-				B0FBF11B2339058D00E10865 /* SceneDelegate.swift */,
-				B0FBF11D2339058D00E10865 /* ViewController.swift */,
-				B0FBF11F2339058D00E10865 /* Main.storyboard */,
-				B0FBF1222339058E00E10865 /* Assets.xcassets */,
 				B0FBF1242339058E00E10865 /* LaunchScreen.storyboard */,
-				B0FBF1272339058E00E10865 /* Info.plist */,
 				B0FBF12D2339076A00E10865 /* Binet.plist */,
 			);
 			path = "binet-task";
@@ -88,7 +88,7 @@
 		B0FBF1322339082200E10865 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				B0FBF1332339087200E10865 /* KeysManager.swift */,
+				B0FBF1332339087200E10865 /* AuthenticationManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -96,8 +96,35 @@
 		B0FBF13523390BC700E10865 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				B0FBF13823390C2000E10865 /* Constants.swift */,
+				B0FBF13A23390CF600E10865 /* APIService.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		B0FBF13C23391A5700E10865 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B0FBF1222339058E00E10865 /* Assets.xcassets */,
+				B0FBF1272339058E00E10865 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B0FBF13D23391BE000E10865 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B0FBF13E23391C3D00E10865 /* MainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B0FBF14023391D2F00E10865 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				B0FBF14123391D3A00E10865 /* UIView+Layout.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,7 +187,6 @@
 			files = (
 				B0FBF1262339058E00E10865 /* LaunchScreen.storyboard in Resources */,
 				B0FBF1232339058E00E10865 /* Assets.xcassets in Resources */,
-				B0FBF1212339058D00E10865 /* Main.storyboard in Resources */,
 				B0FBF12E2339076A00E10865 /* Binet.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -172,25 +198,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0FBF11E2339058D00E10865 /* ViewController.swift in Sources */,
+				B0FBF13B23390CF600E10865 /* APIService.swift in Sources */,
 				B0FBF131233907AF00E10865 /* Keys.swift in Sources */,
-				B0FBF1342339087200E10865 /* KeysManager.swift in Sources */,
+				B0FBF1342339087200E10865 /* AuthenticationManager.swift in Sources */,
 				B0FBF11A2339058D00E10865 /* AppDelegate.swift in Sources */,
-				B0FBF11C2339058D00E10865 /* SceneDelegate.swift in Sources */,
+				B0FBF14223391D3A00E10865 /* UIView+Layout.swift in Sources */,
+				B0FBF13923390C2000E10865 /* Constants.swift in Sources */,
+				B0FBF13F23391C3D00E10865 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B0FBF11F2339058D00E10865 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B0FBF1202339058D00E10865 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B0FBF1242339058E00E10865 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -252,7 +272,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -306,7 +326,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -321,7 +341,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "binet-task/Info.plist";
+				DEVELOPMENT_TEAM = RXJ69EWCMT;
+				INFOPLIST_FILE = "binet-task/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -329,7 +350,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ozolc.binet-task";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -338,7 +359,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "binet-task/Info.plist";
+				DEVELOPMENT_TEAM = RXJ69EWCMT;
+				INFOPLIST_FILE = "binet-task/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -346,7 +368,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ozolc.binet-task";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
