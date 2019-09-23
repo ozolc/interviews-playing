@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		B0FBF11A2339058D00E10865 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FBF1192339058D00E10865 /* AppDelegate.swift */; };
 		B0FBF1232339058E00E10865 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0FBF1222339058E00E10865 /* Assets.xcassets */; };
-		B0FBF1262339058E00E10865 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0FBF1242339058E00E10865 /* LaunchScreen.storyboard */; };
-		B0FBF12E2339076A00E10865 /* Binet.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0FBF12D2339076A00E10865 /* Binet.plist */; };
 		B0FBF131233907AF00E10865 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FBF130233907AF00E10865 /* Keys.swift */; };
 		B0FBF1342339087200E10865 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FBF1332339087200E10865 /* AuthenticationManager.swift */; };
 		B0FBF13923390C2000E10865 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FBF13823390C2000E10865 /* Constants.swift */; };
@@ -19,13 +17,15 @@
 		B0FBF14223391D3A00E10865 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FBF14123391D3A00E10865 /* UIView+Layout.swift */; };
 		B0FBF14623392B9800E10865 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FBF14523392B9800E10865 /* SplashViewController.swift */; };
 		B0FBF1482339311700E10865 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FBF1472339311700E10865 /* RootViewController.swift */; };
+		B0FBF149233932B400E10865 /* Binet.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0FBF12D2339076A00E10865 /* Binet.plist */; };
+		B0FBF14B2339344A00E10865 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FBF14A2339344A00E10865 /* Session.swift */; };
+		B0FBF14D2339353000E10865 /* DataApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FBF14C2339353000E10865 /* DataApi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B0FBF1162339058D00E10865 /* binet-task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "binet-task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FBF1192339058D00E10865 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0FBF1222339058E00E10865 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B0FBF1252339058E00E10865 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0FBF1272339058E00E10865 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0FBF12D2339076A00E10865 /* Binet.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Binet.plist; sourceTree = "<group>"; };
 		B0FBF130233907AF00E10865 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
@@ -36,6 +36,8 @@
 		B0FBF14123391D3A00E10865 /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		B0FBF14523392B9800E10865 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		B0FBF1472339311700E10865 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		B0FBF14A2339344A00E10865 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		B0FBF14C2339353000E10865 /* DataApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataApi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +77,6 @@
 				B0FBF1322339082200E10865 /* Managers */,
 				B0FBF12F2339079B00E10865 /* Model */,
 				B0FBF1192339058D00E10865 /* AppDelegate.swift */,
-				B0FBF1242339058E00E10865 /* LaunchScreen.storyboard */,
 				B0FBF12D2339076A00E10865 /* Binet.plist */,
 			);
 			path = "binet-task";
@@ -85,6 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				B0FBF130233907AF00E10865 /* Keys.swift */,
+				B0FBF14A2339344A00E10865 /* Session.swift */,
+				B0FBF14C2339353000E10865 /* DataApi.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -191,9 +194,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0FBF1262339058E00E10865 /* LaunchScreen.storyboard in Resources */,
+				B0FBF149233932B400E10865 /* Binet.plist in Resources */,
 				B0FBF1232339058E00E10865 /* Assets.xcassets in Resources */,
-				B0FBF12E2339076A00E10865 /* Binet.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,9 +206,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0FBF14B2339344A00E10865 /* Session.swift in Sources */,
 				B0FBF13B23390CF600E10865 /* APIService.swift in Sources */,
 				B0FBF131233907AF00E10865 /* Keys.swift in Sources */,
 				B0FBF1482339311700E10865 /* RootViewController.swift in Sources */,
+				B0FBF14D2339353000E10865 /* DataApi.swift in Sources */,
 				B0FBF1342339087200E10865 /* AuthenticationManager.swift in Sources */,
 				B0FBF11A2339058D00E10865 /* AppDelegate.swift in Sources */,
 				B0FBF14223391D3A00E10865 /* UIView+Layout.swift in Sources */,
@@ -217,17 +221,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		B0FBF1242339058E00E10865 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B0FBF1252339058E00E10865 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B0FBF1282339058E00E10865 /* Debug */ = {

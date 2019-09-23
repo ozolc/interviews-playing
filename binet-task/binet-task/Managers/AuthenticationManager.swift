@@ -36,6 +36,10 @@ class AuthenticationManager: AuthenticationManagerProtocol {
         Constants.tokenId = retrieveToken()
     }
     
+    func isUserSignedIn() -> Bool {
+        return (Constants.sessionId != "" && Constants.tokenId != "")
+    }
+    
 }
 
 //extension AuthenticationManager {

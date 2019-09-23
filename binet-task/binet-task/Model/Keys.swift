@@ -9,10 +9,5 @@
 import Foundation
 
 struct Keys: Codable {
-    
     let token: String
-    
-    private enum CodingKeys: String, CodingKey {
-        case token = "Token"
-    }
 }

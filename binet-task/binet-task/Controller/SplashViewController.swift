@@ -34,24 +34,26 @@ class SplashViewController: UIViewController {
         print(Constants.tokenId)
         apiService = APIService(authManager: authManager)
         
-//        APIService.shared.loadingGenresFromNet {
-//            DispatchQueue.main.async {
-//                self.activityIndicator.stopAnimating()
-//                
+        apiService.getSessionId(requestUrl: Constants.baseURL, token: Constants.tokenId) { (data, error) in
+            DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
+
 //                if self.isUserSignedIn() {
-//
-//                    APIService.shared.loadingUserDataFromNet(completion: {
-//                        APIService.shared.setGlobalUserFromKeychain()
-//                        AppDelegate.shared.rootViewController.switchToMainScreen()
-//                    })
-//
-//                } else {
-//                    AppDelegate.shared.rootViewController.switchToLogout()
-//                    print("No user in Keychain")
-//                }
-//            }
-//        }
-        
+                    if let error = error {
+                        print(error.localizedDescription)
+                    } else {
+                        if let data = data {
+                            Constants.sessionId = data.data.session
+                            print(self.isUserSignedIn())
+                        }
+                    }
+                }
+
+        }
     }
     
+        
+    func isUserSignedIn() -> Bool {
+        return authManager.isUserSignedIn()
+    }
 }

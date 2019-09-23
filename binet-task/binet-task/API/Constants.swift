@@ -10,6 +10,9 @@ import Foundation
 struct Constants {
     
     static let baseURL = "https://bnet.i-partner.ru/testAPI/"
-    static var tokenId = "token"
+    static var tokenId = ""
+    static var sessionId = ""
     
+    // API requests
+    static let newSession = "new_session"
 }
