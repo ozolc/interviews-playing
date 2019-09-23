@@ -8,20 +8,15 @@
 
 import Foundation
 
-protocol AuthenticationManagerProtocol: class {
-    func retrieveToken() -> String
+protocol AuthenticationManagerProtocol {
+    func setAuthData()
 }
 
-class AuthenticationManager {
-    
-//    lazy var tokenId: String = {
-//        let keys = retrieveToken()
-//        return keys.token
-//    }()
+class AuthenticationManager: AuthenticationManagerProtocol {
     
     init() {}
     
-    func retrieveToken() -> String {
+    private func retrieveToken() -> String {
         guard let url = Bundle.main.url(forResource: "Binet",
                                         withExtension: ".plist") else {
                                             fatalError()
@@ -35,6 +30,10 @@ class AuthenticationManager {
         } catch {
             fatalError()
         }
+    }
+    
+    func setAuthData() {
+        Constants.tokenId = retrieveToken()
     }
     
 }

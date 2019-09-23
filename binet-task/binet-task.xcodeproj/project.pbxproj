@@ -17,6 +17,8 @@
 		B0FBF13B23390CF600E10865 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FBF13A23390CF600E10865 /* APIService.swift */; };
 		B0FBF13F23391C3D00E10865 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FBF13E23391C3D00E10865 /* MainViewController.swift */; };
 		B0FBF14223391D3A00E10865 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FBF14123391D3A00E10865 /* UIView+Layout.swift */; };
+		B0FBF14623392B9800E10865 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FBF14523392B9800E10865 /* SplashViewController.swift */; };
+		B0FBF1482339311700E10865 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FBF1472339311700E10865 /* RootViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		B0FBF13A23390CF600E10865 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		B0FBF13E23391C3D00E10865 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B0FBF14123391D3A00E10865 /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
+		B0FBF14523392B9800E10865 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		B0FBF1472339311700E10865 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				B0FBF13E23391C3D00E10865 /* MainViewController.swift */,
+				B0FBF14523392B9800E10865 /* SplashViewController.swift */,
+				B0FBF1472339311700E10865 /* RootViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -200,11 +206,13 @@
 			files = (
 				B0FBF13B23390CF600E10865 /* APIService.swift in Sources */,
 				B0FBF131233907AF00E10865 /* Keys.swift in Sources */,
+				B0FBF1482339311700E10865 /* RootViewController.swift in Sources */,
 				B0FBF1342339087200E10865 /* AuthenticationManager.swift in Sources */,
 				B0FBF11A2339058D00E10865 /* AppDelegate.swift in Sources */,
 				B0FBF14223391D3A00E10865 /* UIView+Layout.swift in Sources */,
 				B0FBF13923390C2000E10865 /* Constants.swift in Sources */,
 				B0FBF13F23391C3D00E10865 /* MainViewController.swift in Sources */,
+				B0FBF14623392B9800E10865 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

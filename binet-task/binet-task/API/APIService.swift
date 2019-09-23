@@ -9,7 +9,7 @@
 import Foundation
 
 protocol APIServiceProtocol {
-    func setAuthData()
+//    func setAuthData()
 }
 
 class APIService {
@@ -23,8 +23,8 @@ class APIService {
 //    private init() {}
 //    static let shared = APIService()
     
-    func setAuthData() {
-        guard let authManager = authManager else { return }
-        Constants.tokenId = authManager.retrieveToken()
-    }
+//    func setAuthData() {
+//        guard let authManager = authManager else { return }
+//        Constants.tokenId = authManager.retrieveToken()
+//    }
 }

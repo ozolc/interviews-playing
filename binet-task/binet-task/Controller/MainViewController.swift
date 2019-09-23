@@ -12,6 +12,8 @@ class MainViewController: UIViewController {
     
     let cellId = "cellId"
     
+//    private let apiService: APIServiceProtocol!
+    
     let tableView = UITableView()
     
     override func viewDidLoad() {
@@ -25,6 +27,8 @@ class MainViewController: UIViewController {
         
         view.addSubview(tableView)
         tableView.fillSuperview()
+        
+        print(Constants.tokenId)
     }
     
     fileprivate func setupTableView() {
