@@ -13,6 +13,9 @@
 		B0FBF1212339058D00E10865 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0FBF11F2339058D00E10865 /* Main.storyboard */; };
 		B0FBF1232339058E00E10865 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0FBF1222339058E00E10865 /* Assets.xcassets */; };
 		B0FBF1262339058E00E10865 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0FBF1242339058E00E10865 /* LaunchScreen.storyboard */; };
+		B0FBF12E2339076A00E10865 /* Binet.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0FBF12D2339076A00E10865 /* Binet.plist */; };
+		B0FBF131233907AF00E10865 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FBF130233907AF00E10865 /* Keys.swift */; };
+		B0FBF1342339087200E10865 /* KeysManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FBF1332339087200E10865 /* KeysManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		B0FBF1222339058E00E10865 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0FBF1252339058E00E10865 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0FBF1272339058E00E10865 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0FBF12D2339076A00E10865 /* Binet.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Binet.plist; sourceTree = "<group>"; };
+		B0FBF130233907AF00E10865 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		B0FBF1332339087200E10865 /* KeysManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,9 @@
 		B0FBF1182339058D00E10865 /* binet-task */ = {
 			isa = PBXGroup;
 			children = (
+				B0FBF13523390BC700E10865 /* API */,
+				B0FBF1322339082200E10865 /* Managers */,
+				B0FBF12F2339079B00E10865 /* Model */,
 				B0FBF1192339058D00E10865 /* AppDelegate.swift */,
 				B0FBF11B2339058D00E10865 /* SceneDelegate.swift */,
 				B0FBF11D2339058D00E10865 /* ViewController.swift */,
@@ -63,8 +72,32 @@
 				B0FBF1222339058E00E10865 /* Assets.xcassets */,
 				B0FBF1242339058E00E10865 /* LaunchScreen.storyboard */,
 				B0FBF1272339058E00E10865 /* Info.plist */,
+				B0FBF12D2339076A00E10865 /* Binet.plist */,
 			);
 			path = "binet-task";
+			sourceTree = "<group>";
+		};
+		B0FBF12F2339079B00E10865 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B0FBF130233907AF00E10865 /* Keys.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B0FBF1322339082200E10865 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				B0FBF1332339087200E10865 /* KeysManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		B0FBF13523390BC700E10865 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +161,7 @@
 				B0FBF1262339058E00E10865 /* LaunchScreen.storyboard in Resources */,
 				B0FBF1232339058E00E10865 /* Assets.xcassets in Resources */,
 				B0FBF1212339058D00E10865 /* Main.storyboard in Resources */,
+				B0FBF12E2339076A00E10865 /* Binet.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +173,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0FBF11E2339058D00E10865 /* ViewController.swift in Sources */,
+				B0FBF131233907AF00E10865 /* Keys.swift in Sources */,
+				B0FBF1342339087200E10865 /* KeysManager.swift in Sources */,
 				B0FBF11A2339058D00E10865 /* AppDelegate.swift in Sources */,
 				B0FBF11C2339058D00E10865 /* SceneDelegate.swift in Sources */,
 			);
