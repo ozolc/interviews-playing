@@ -20,6 +20,8 @@
 		B0FBF149233932B400E10865 /* Binet.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0FBF12D2339076A00E10865 /* Binet.plist */; };
 		B0FBF14B2339344A00E10865 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FBF14A2339344A00E10865 /* Session.swift */; };
 		B0FBF14D2339353000E10865 /* DataApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FBF14C2339353000E10865 /* DataApi.swift */; };
+		B0FBF14F233976C800E10865 /* EntryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FBF14E233976C800E10865 /* EntryResponse.swift */; };
+		B0FBF1512339787E00E10865 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FBF1502339787E00E10865 /* ErrorResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		B0FBF1472339311700E10865 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		B0FBF14A2339344A00E10865 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		B0FBF14C2339353000E10865 /* DataApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataApi.swift; sourceTree = "<group>"; };
+		B0FBF14E233976C800E10865 /* EntryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryResponse.swift; sourceTree = "<group>"; };
+		B0FBF1502339787E00E10865 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,8 @@
 				B0FBF130233907AF00E10865 /* Keys.swift */,
 				B0FBF14A2339344A00E10865 /* Session.swift */,
 				B0FBF14C2339353000E10865 /* DataApi.swift */,
+				B0FBF14E233976C800E10865 /* EntryResponse.swift */,
+				B0FBF1502339787E00E10865 /* ErrorResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -209,6 +215,7 @@
 				B0FBF14B2339344A00E10865 /* Session.swift in Sources */,
 				B0FBF13B23390CF600E10865 /* APIService.swift in Sources */,
 				B0FBF131233907AF00E10865 /* Keys.swift in Sources */,
+				B0FBF14F233976C800E10865 /* EntryResponse.swift in Sources */,
 				B0FBF1482339311700E10865 /* RootViewController.swift in Sources */,
 				B0FBF14D2339353000E10865 /* DataApi.swift in Sources */,
 				B0FBF1342339087200E10865 /* AuthenticationManager.swift in Sources */,
@@ -217,6 +224,7 @@
 				B0FBF13923390C2000E10865 /* Constants.swift in Sources */,
 				B0FBF13F23391C3D00E10865 /* MainViewController.swift in Sources */,
 				B0FBF14623392B9800E10865 /* SplashViewController.swift in Sources */,
+				B0FBF1512339787E00E10865 /* ErrorResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

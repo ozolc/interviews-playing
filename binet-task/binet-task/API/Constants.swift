@@ -15,4 +15,5 @@ struct Constants {
     
     // API requests
     static let newSession = "new_session"
+    static let addEntry = "add_entry"
 }

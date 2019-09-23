@@ -24,35 +24,49 @@ class SplashViewController: UIViewController {
         activityIndicator.frame = view.bounds
         activityIndicator.backgroundColor = UIColor(white: 0, alpha: 0.4)
         
-        makeServiceCall()
+        apiService = APIService(authManager: authManager)
+        
+        //        getSessionId()
+//        addEntry(with: "Test text")
     }
     
-    private func makeServiceCall() {
+    private func getSessionId() {
         activityIndicator.startAnimating()
         
         authManager.setAuthData()
         print(Constants.tokenId)
-        apiService = APIService(authManager: authManager)
         
         apiService.getSessionId(requestUrl: Constants.baseURL, token: Constants.tokenId) { (data, error) in
             DispatchQueue.main.async {
                 self.activityIndicator.stopAnimating()
-
-//                if self.isUserSignedIn() {
-                    if let error = error {
-                        print(error.localizedDescription)
-                    } else {
-                        if let data = data {
-                            Constants.sessionId = data.data.session
-                            print(self.isUserSignedIn())
-                        }
+                
+                //                if self.isUserSignedIn() {
+                if let error = error {
+                    print(error.localizedDescription)
+                } else {
+                    if let data = data {
+                        Constants.sessionId = data.data.session
                     }
                 }
-
+            }
+        }
+        
+    }
+    
+//    private func addEntry(with text: String) {
+    private func addEntry(with text: String) {
+        apiService.addEntry(requestUrl: Constants.baseURL, body: text, sessionId: "XHGpQZg9J0aG1fhtFy", token: Constants.tokenId) { (data, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                if let data = data {
+                    print(data)
+                }
+            }
         }
     }
     
-        
+    
     func isUserSignedIn() -> Bool {
         return authManager.isUserSignedIn()
     }

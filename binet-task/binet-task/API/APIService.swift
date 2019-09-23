@@ -20,6 +20,7 @@ class APIService: APIServiceProtocol {
         self.authManager = authManager
     }
     
+    // new_session - Получение новой session
     func getSessionId(requestUrl: String, token: String, completionHandlerForSessionId: @escaping (_ result: Session?, _ error: Error?) -> Void) {
         
         let parameters = [
@@ -28,7 +29,7 @@ class APIService: APIServiceProtocol {
         
         print(parameters)
         
-        taskForPOSTMethod(requestURL: Constants.baseURL, parameters: parameters) { (result: Session?, error: Error?) in
+        taskForPOSTMethod(requestURL: requestUrl, parameters: parameters) { (result: Session?, error: Error?) in
             if let error = error {
                 completionHandlerForSessionId(nil, error)
             } else {
@@ -37,6 +38,26 @@ class APIService: APIServiceProtocol {
         }
     }
     
+    // add_entry - Отправка данных на сервер
+    func addEntry(requestUrl: String, body: String, sessionId: String, token: String, completionHandlerForAddEntry: @escaping (_ result: EntryResponse?, _ error: Error?) -> Void) {
+        
+        let parameters = [
+//            "XHGpQZg9J0aG1fhtFy"
+            "a": "add_entry",
+            "session": "XHGpQZg9J0aG1fhtFy",
+            "body": "body sdfadsaf"
+            ] as [String : String]
+        
+        taskForPOSTMethod(requestURL: requestUrl, parameters: parameters) { (result: EntryResponse?, error: Error?) in
+            if let error = error {
+                completionHandlerForAddEntry(nil, error)
+            } else {
+                completionHandlerForAddEntry(result, nil)
+            }
+        }
+    }
+    
+    // Generic POST запрос для остальных запросов
     func taskForPOSTMethod<T: Decodable>(requestURL: String, parameters: [String: Any], completionHandler: @escaping (_ result: T?, _ error: Error?) -> Void) {
         
         var request = URLRequest(url: URL(string: requestURL)!,
@@ -45,10 +66,11 @@ class APIService: APIServiceProtocol {
         
         let postData = (parameters.compactMap({ (key, value) -> String in
             return "\(key)=\(value)"
-        }) as Array).joined(separator: ";").data(using: .utf8)
+        }) as Array).joined(separator: "&").data(using: .utf8)
+        
         
         request.httpMethod = "POST"
-        request.setValue(Constants.tokenId, forHTTPHeaderField: "token")
+        request.setValue("hnjL25I-dF-o5GcsPb", forHTTPHeaderField: "token")
         request.httpBody = postData
         
         let session = URLSession.shared
