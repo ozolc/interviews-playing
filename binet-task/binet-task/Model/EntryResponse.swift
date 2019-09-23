@@ -10,9 +10,12 @@ import Foundation
 
 struct EntryResponse: Decodable {
     let status: Int
-    let data: EntryResponseData
+    let data: [[EntryResponseData]]
 }
 
 struct EntryResponseData: Decodable {
     let id: String
+    let body: String
+    let da: String
+    let dm: String
 }

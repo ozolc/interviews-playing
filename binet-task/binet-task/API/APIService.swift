@@ -42,7 +42,6 @@ class APIService: APIServiceProtocol {
     func addEntry(requestUrl: String, body: String, sessionId: String, token: String, completionHandlerForAddEntry: @escaping (_ result: EntryResponse?, _ error: Error?) -> Void) {
         
         let parameters = [
-//            "XHGpQZg9J0aG1fhtFy"
             "a": "add_entry",
             "session": "XHGpQZg9J0aG1fhtFy",
             "body": "body sdfadsaf"
@@ -56,6 +55,23 @@ class APIService: APIServiceProtocol {
             }
         }
     }
+    
+    // get_entries - Получение данных с сервера
+        func getEntries(requestUrl: String, sessionId: String, completionHandlerForAddEntry: @escaping (_ result: EntryResponse?, _ error: Error?) -> Void) {
+            
+            let parameters = [
+                "a": Constants.getEntries,
+                "session": "XHGpQZg9J0aG1fhtFy"
+                ] as [String : Any]
+            
+            taskForPOSTMethod(requestURL: requestUrl, parameters: parameters) { (result: EntryResponse?, error: Error?) in
+                if let error = error {
+                    completionHandlerForAddEntry(nil, error)
+                } else {
+                    completionHandlerForAddEntry(result, nil)
+                }
+            }
+        }
     
     // Generic POST запрос для остальных запросов
     func taskForPOSTMethod<T: Decodable>(requestURL: String, parameters: [String: Any], completionHandler: @escaping (_ result: T?, _ error: Error?) -> Void) {

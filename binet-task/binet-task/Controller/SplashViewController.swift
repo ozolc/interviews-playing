@@ -28,6 +28,7 @@ class SplashViewController: UIViewController {
         
         //        getSessionId()
 //        addEntry(with: "Test text")
+        getEntries()
     }
     
     private func getSessionId() {
@@ -53,9 +54,20 @@ class SplashViewController: UIViewController {
         
     }
     
-//    private func addEntry(with text: String) {
     private func addEntry(with text: String) {
         apiService.addEntry(requestUrl: Constants.baseURL, body: text, sessionId: "XHGpQZg9J0aG1fhtFy", token: Constants.tokenId) { (data, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                if let data = data {
+                    print(data)
+                }
+            }
+        }
+    }
+    
+    private func getEntries() {
+        apiService.getEntries(requestUrl: Constants.baseURL, sessionId: "XHGpQZg9J0aG1fhtFy") { (data, error) in
             if let error = error {
                 print(error.localizedDescription)
             } else {
