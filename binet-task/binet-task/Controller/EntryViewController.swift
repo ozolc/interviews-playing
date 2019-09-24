@@ -16,7 +16,6 @@ class EntryViewController: UIViewController {
             navigationItem.title = "Данные о \(entry.id)"
             
             daTextLabel.text = entry.da
-            print(entry.da)
             
             if entry.da != entry.dm {
                 dmTextLabel.text = entry.dm

@@ -13,6 +13,8 @@
 		B00DA7F22339F27D009ACE63 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00DA7F12339F27D009ACE63 /* EntryViewController.swift */; };
 		B040BE6B233A0FBA002CF6CF /* AddEntryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B040BE6A233A0FBA002CF6CF /* AddEntryResponse.swift */; };
 		B040BE6D233A19E6002CF6CF /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B040BE6C233A19E6002CF6CF /* UIViewController+Ext.swift */; };
+		B040BE6F233A1E3A002CF6CF /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = B040BE6E233A1E3A002CF6CF /* Reachability.swift */; };
+		B040BE71233A2082002CF6CF /* CheckConnectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B040BE70233A2082002CF6CF /* CheckConnectionController.swift */; };
 		B0FBF11A2339058D00E10865 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FBF1192339058D00E10865 /* AppDelegate.swift */; };
 		B0FBF1232339058E00E10865 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0FBF1222339058E00E10865 /* Assets.xcassets */; };
 		B0FBF131233907AF00E10865 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FBF130233907AF00E10865 /* Keys.swift */; };
@@ -36,6 +38,8 @@
 		B00DA7F12339F27D009ACE63 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		B040BE6A233A0FBA002CF6CF /* AddEntryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryResponse.swift; sourceTree = "<group>"; };
 		B040BE6C233A19E6002CF6CF /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		B040BE6E233A1E3A002CF6CF /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		B040BE70233A2082002CF6CF /* CheckConnectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckConnectionController.swift; sourceTree = "<group>"; };
 		B0FBF1162339058D00E10865 /* binet-task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "binet-task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FBF1192339058D00E10865 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0FBF1222339058E00E10865 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -151,6 +155,7 @@
 				B0FBF14523392B9800E10865 /* SplashViewController.swift */,
 				B0FBF1472339311700E10865 /* RootViewController.swift */,
 				B00DA7F12339F27D009ACE63 /* EntryViewController.swift */,
+				B040BE70233A2082002CF6CF /* CheckConnectionController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -161,6 +166,7 @@
 				B0FBF14123391D3A00E10865 /* UIView+Layout.swift */,
 				B00DA7ED2339E2A6009ACE63 /* VerticalStackView+Ext.swift */,
 				B040BE6C233A19E6002CF6CF /* UIViewController+Ext.swift */,
+				B040BE6E233A1E3A002CF6CF /* Reachability.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -237,11 +243,13 @@
 			files = (
 				B0FBF14B2339344A00E10865 /* Session.swift in Sources */,
 				B0FBF13B23390CF600E10865 /* APIService.swift in Sources */,
+				B040BE6F233A1E3A002CF6CF /* Reachability.swift in Sources */,
 				B0FBF131233907AF00E10865 /* Keys.swift in Sources */,
 				B00DA7F02339EC73009ACE63 /* AddEntryViewController.swift in Sources */,
 				B0FBF14F233976C800E10865 /* EntryResponse.swift in Sources */,
 				B00DA7F22339F27D009ACE63 /* EntryViewController.swift in Sources */,
 				B0FBF1482339311700E10865 /* RootViewController.swift in Sources */,
+				B040BE71233A2082002CF6CF /* CheckConnectionController.swift in Sources */,
 				B0FBF1342339087200E10865 /* AuthenticationManager.swift in Sources */,
 				B040BE6D233A19E6002CF6CF /* UIViewController+Ext.swift in Sources */,
 				B040BE6B233A0FBA002CF6CF /* AddEntryResponse.swift in Sources */,
@@ -309,7 +317,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -363,7 +371,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

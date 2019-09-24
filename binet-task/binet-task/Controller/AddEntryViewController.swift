@@ -51,7 +51,7 @@ class AddEntryViewController: UIViewController {
         
         apiService = APIService(authManager: authManager)
         view.backgroundColor = .white
-        bodyTextField.delegate = self
+        //        bodyTextField.delegate = self
         setupLayout()
     }
     
@@ -72,23 +72,35 @@ class AddEntryViewController: UIViewController {
     }
     
     @objc func handleAddEntry() {
-        print("handleAddEntry")
-        guard let text = bodyTextField.text else { return }
-        addEntry(with: text)
-        
-        apiService.getEntries(requestUrl: Constants.baseURL, sessionId: "XHGpQZg9J0aG1fhtFy") { [weak self] (data, error) in
-            if let error = error {
-                print(error.localizedDescription)
-            } else {
-                if let data = data {
-                    entries = data
-                    DispatchQueue.main.async {
-                        self?.presentAlert(withTitle: "Успешно", message: "Данные сохранены на сервере") {
-//                            self?.navigationController?.popViewController(animated: true)
+        if Reachability.isConnectedToNetwork() {
+            print("Internet Connection Available!")
+            
+            guard let text = bodyTextField.text else { return }
+            addEntry(with: text) { [weak self] in
+                self?.apiService.getEntries(requestUrl: Constants.baseURL, sessionId: Constants.sessionId) { [weak self] (data, error) in
+                    if let error = error {
+                        print(error.localizedDescription)
+                    } else {
+                        
+                        if let data = data {
+                            entries = data
+                            DispatchQueue.main.async {
+                                self?.presentAlert(withTitle: "Успешно", message: "Данные сохранены на сервере") {
+                                    self?.navigationController?.popViewController(animated: true)
+                                    
+                                }
+                            }
                         }
+                        
                     }
                     
                 }
+            }
+        } else {
+            print("Internet Connection not Available!")
+            DispatchQueue.main.async {
+                self.presentAlert(withTitle: "Внимание", message: "Нет связи с интернет")
+//                    self?.handleAddEntry()
             }
         }
         
@@ -99,17 +111,15 @@ class AddEntryViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    private func addEntry(with text: String) {
-        apiService.addEntry(requestUrl: Constants.baseURL, body: text, sessionId: "XHGpQZg9J0aG1fhtFy", token: Constants.tokenId) { (data, error) in
+    private func addEntry(with text: String, completion: @escaping () -> ()) {
+        apiService.addEntry(requestUrl: Constants.baseURL, body: text, sessionId: Constants.sessionId, token: Constants.tokenId) { (data, error) in
             if let error = error {
                 print(error.localizedDescription)
             } else {
                 if let data = data {
-                    print(data)
+                    completion()
                 }
             }
         }
     }
 }
-
-extension AddEntryViewController: UITextFieldDelegate {}

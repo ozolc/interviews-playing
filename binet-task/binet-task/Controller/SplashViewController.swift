@@ -13,7 +13,7 @@ class SplashViewController: UIViewController {
     private var authManager = AuthenticationManager()
     private var apiService: APIService!
     
-    private let activityIndicator = UIActivityIndicatorView(style: .gray)
+    private let activityIndicator = UIActivityIndicatorView(style: .large)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,12 +26,25 @@ class SplashViewController: UIViewController {
         
         apiService = APIService(authManager: authManager)
         
+        checkInternetAbility()
+        
 //        getSessionId()
 //        addEntry(with: "Test text")
-        getEntries {
+       
+    }
+    
+    fileprivate func checkInternetAbility() {
+        if Reachability.isConnectedToNetwork() {
+            print("Internet Connection Available!")
             DispatchQueue.main.async {
-//            print(entries)
-            AppDelegate.shared.rootViewController.switchToMainScreen()
+                self.getSessionId()
+            }
+        } else {
+            print("Internet Connection not Available!")
+            DispatchQueue.main.async {
+                self.presentAlert(withTitle: "Внимание", message: "Нет связи с интернет") { [weak self] in
+                    self?.checkInternetAbility()
+                }
             }
         }
     }
@@ -40,7 +53,7 @@ class SplashViewController: UIViewController {
         activityIndicator.startAnimating()
         
         authManager.setAuthData()
-        print(Constants.tokenId)
+        print("tokenId:", Constants.tokenId)
         
         apiService.getSessionId(requestUrl: Constants.baseURL, token: Constants.tokenId) { [weak self] (data, error) in
             
@@ -51,7 +64,7 @@ class SplashViewController: UIViewController {
             } else {
                 if let data = data {
                     Constants.sessionId = data.data.session
-                    
+                    print("sessionId:", Constants.sessionId)
                     if self.isUserSignedIn() {
                         self.getEntries {
                             DispatchQueue.main.async {
@@ -59,7 +72,6 @@ class SplashViewController: UIViewController {
                                 AppDelegate.shared.rootViewController.switchToMainScreen()
                             }
                         }
-                        
                     }
                 }
             }
@@ -70,14 +82,13 @@ class SplashViewController: UIViewController {
     
     
     private func getEntries(completion: @escaping () -> ()) {
-        apiService.getEntries(requestUrl: Constants.baseURL, sessionId: "XHGpQZg9J0aG1fhtFy") { (data, error) in
+        apiService.getEntries(requestUrl: Constants.baseURL, sessionId: Constants.sessionId) { (data, error) in
             
             if let error = error {
                 print(error.localizedDescription)
             } else {
                 if let data = data {
                     entries = data
-//                    print(entries)
                     completion()
                 }
             }

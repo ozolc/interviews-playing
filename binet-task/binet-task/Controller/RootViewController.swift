@@ -11,6 +11,9 @@ import UIKit
 class RootViewController: UIViewController {
     private var current: UIViewController
     
+    private var authManager = AuthenticationManager()
+    private var apiService: APIService!
+    
     var entries = [EntryResponse]()
     
     init() {
@@ -23,7 +26,7 @@ class RootViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        navigationController?.isNavigationBarHidden = true
+        apiService = APIService(authManager: authManager)
         
         addChild(current)
         current.view.frame = view.bounds
@@ -33,6 +36,7 @@ class RootViewController: UIViewController {
     
     func switchToMainScreen() {
         let navController = UINavigationController(rootViewController: mainViewController)
+        mainViewController.apiService = apiService
         animateFadeTransition(to: navController)
     }
     

@@ -9,7 +9,7 @@
 import Foundation
 
 protocol APIServiceProtocol {
-    
+    func getEntries(requestUrl: String, sessionId: String, completionHandlerForAddEntry: @escaping (_ result: EntryResponse?, _ error: Error?) -> Void)
 }
 
 class APIService: APIServiceProtocol {
@@ -31,7 +31,7 @@ class APIService: APIServiceProtocol {
             if let error = error {
                 completionHandlerForSessionId(nil, error)
             } else {
-                    completionHandlerForSessionId(result, nil)
+                completionHandlerForSessionId(result, nil)
             }
         }
     }
@@ -59,7 +59,7 @@ class APIService: APIServiceProtocol {
             
             let parameters = [
                 "a": Constants.getEntries,
-                "session": "XHGpQZg9J0aG1fhtFy"
+                "session": Constants.sessionId
                 ] as [String : Any]
             
             taskForPOSTMethod(requestURL: requestUrl, parameters: parameters) { (result: EntryResponse?, error: Error?) in
@@ -84,7 +84,7 @@ class APIService: APIServiceProtocol {
         
         
         request.httpMethod = "POST"
-        request.setValue("hnjL25I-dF-o5GcsPb", forHTTPHeaderField: "token")
+        request.setValue(Constants.tokenId, forHTTPHeaderField: "token")
         request.httpBody = postData
         
         let session = URLSession.shared
@@ -95,11 +95,8 @@ class APIService: APIServiceProtocol {
                 completionHandler(nil, error)
                 return
             } else {
-                print("Yeah! Hand response")
                 do {
                     guard let data = data else { return }
-                    print(data)
-                    
                     let objects = try JSONDecoder().decode(T.self, from: data)
                     completionHandler(objects, nil)
                 } catch let err {
