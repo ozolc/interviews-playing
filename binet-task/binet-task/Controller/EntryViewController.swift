@@ -30,7 +30,6 @@ class EntryViewController: UIViewController {
                 bodyLabel.text = text
             }
             
-            
         }
     }
     

@@ -26,7 +26,13 @@ class MainViewController: UIViewController {
         view.addSubview(tableView)
         tableView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.safeAreaLayoutGuide.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor)
         
-        print(entries?.data.first?.count ?? "")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(handleAddEntry))
+    }
+    
+    @objc func handleAddEntry() {
+        let controller = AddEntryViewController()
+        controller.navigationItem.title = "Добавить новую запись"
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     fileprivate func setupTableView() {
