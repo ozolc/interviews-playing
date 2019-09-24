@@ -9,7 +9,7 @@
 import Foundation
 
 protocol APIServiceProtocol {
-    //    func getSessionId(requestUrl: String, token: String, completionHandlerForSessionId: @escaping (_ result: Decodable?, _ error: Error?) -> Void)
+    
 }
 
 class APIService: APIServiceProtocol {
@@ -37,15 +37,15 @@ class APIService: APIServiceProtocol {
     }
     
     // add_entry - Отправка данных на сервер
-    func addEntry(requestUrl: String, body: String, sessionId: String, token: String, completionHandlerForAddEntry: @escaping (_ result: EntryResponse?, _ error: Error?) -> Void) {
+    func addEntry(requestUrl: String, body: String, sessionId: String, token: String, completionHandlerForAddEntry: @escaping (_ result: AddEntryResponse?, _ error: Error?) -> Void) {
         
         let parameters = [
-            "a": "add_entry",
-            "session": "XHGpQZg9J0aG1fhtFy",
-            "body": "body sdfadsaf"
-            ] as [String : String]
+            "a": Constants.addEntry,
+            "session": sessionId,
+            "body": body
+            ] as [String : Any]
         
-        taskForPOSTMethod(requestURL: requestUrl, parameters: parameters) { (result: EntryResponse?, error: Error?) in
+        taskForPOSTMethod(requestURL: requestUrl, parameters: parameters) { (result: AddEntryResponse?, error: Error?) in
             if let error = error {
                 completionHandlerForAddEntry(nil, error)
             } else {

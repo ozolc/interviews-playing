@@ -43,22 +43,15 @@ class AddEntryViewController: UIViewController {
         return button
     }()
     
-    @objc func handleAddEntry() {
-        print("handleAddEntry")
-    }
-    
-    @objc func handleCancelEntry() {
-        print("handleCancelEntry")
-        navigationController?.popViewController(animated: true)
-    }
+    private var authManager = AuthenticationManager()
+    private var apiService: APIService!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        bodyTextField.delegate = self
-        
+        apiService = APIService(authManager: authManager)
         view.backgroundColor = .white
-        
+        bodyTextField.delegate = self
         setupLayout()
     }
     
@@ -75,12 +68,48 @@ class AddEntryViewController: UIViewController {
         buttonsStackView.distribution = .fillEqually
         view.addSubview(buttonsStackView)
         buttonsStackView.constrainHeight(constant: 30)
-//        buttonsStackView.centerInSuperview()
         buttonsStackView.anchor(top: bodyTextField.bottomAnchor, leading: view.safeAreaLayoutGuide.leadingAnchor, bottom: nil, trailing: view.safeAreaLayoutGuide.trailingAnchor, padding: .init(top: 10, left: 10, bottom: 0, right: 10))
     }
     
+    @objc func handleAddEntry() {
+        print("handleAddEntry")
+        guard let text = bodyTextField.text else { return }
+        addEntry(with: text)
+        
+        apiService.getEntries(requestUrl: Constants.baseURL, sessionId: "XHGpQZg9J0aG1fhtFy") { [weak self] (data, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                if let data = data {
+                    entries = data
+                    DispatchQueue.main.async {
+                        self?.presentAlert(withTitle: "Успешно", message: "Данные сохранены на сервере") {
+//                            self?.navigationController?.popViewController(animated: true)
+                        }
+                    }
+                    
+                }
+            }
+        }
+        
+        
+    }
+    
+    @objc func handleCancelEntry() {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    private func addEntry(with text: String) {
+        apiService.addEntry(requestUrl: Constants.baseURL, body: text, sessionId: "XHGpQZg9J0aG1fhtFy", token: Constants.tokenId) { (data, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                if let data = data {
+                    print(data)
+                }
+            }
+        }
+    }
 }
 
-extension AddEntryViewController: UITextFieldDelegate {
-    
-}
+extension AddEntryViewController: UITextFieldDelegate {}

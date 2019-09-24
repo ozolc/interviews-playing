@@ -42,13 +42,4 @@ class AuthenticationManager: AuthenticationManagerProtocol {
     
 }
 
-//extension AuthenticationManager {
-//
-//    struct localConstants {
-//        private init() {}
-//        static var tokenId = "token"
-//    }
-//
-//}
-
 

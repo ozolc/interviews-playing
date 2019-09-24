@@ -101,10 +101,10 @@ class EntryViewController: UIViewController {
         daStackView.spacing = 2
         
         let overallStackView = VerticalStackView(arrangedSubviews: [daStackView, dmStackView, bodyLabel], spacing: 2)
-        overallStackView.distribution = .fillEqually
+        overallStackView.distribution = .fill
         
         view.addSubview(overallStackView)
-        overallStackView.centerInSuperview()
+        overallStackView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.safeAreaLayoutGuide.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor, padding: .init(top: 10, left: 10, bottom: 10, right: 10))
     }
     
     

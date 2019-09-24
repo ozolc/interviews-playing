@@ -67,6 +67,7 @@ class MainViewCell: UITableViewCell {
         label.font = .systemFont(ofSize: 12, weight: .regular)
         label.textColor = UIColor.black
         label.sizeToFit()
+        label.numberOfLines = 0
         label.text = "bodyText"
         return label
     }()
@@ -97,7 +98,7 @@ class MainViewCell: UITableViewCell {
         daStackView.spacing = 2
         
         let overallStackView = VerticalStackView(arrangedSubviews: [daStackView, dmStackView, bodyLabel], spacing: 2)
-        overallStackView.distribution = .fillEqually
+        overallStackView.distribution = .fill
         backgroundView.addSubview(overallStackView)
         overallStackView.fillSuperview(padding: .init(top: 5, left: 10, bottom: 5, right: 10))
         

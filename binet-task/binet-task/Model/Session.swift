@@ -9,7 +9,6 @@
 import Foundation
 
 struct Session: Decodable {
-    
     let status: Int
     let data: SessionResponse
     

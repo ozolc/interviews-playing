@@ -11,6 +11,8 @@
 		B00DA7EE2339E2A6009ACE63 /* VerticalStackView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00DA7ED2339E2A6009ACE63 /* VerticalStackView+Ext.swift */; };
 		B00DA7F02339EC73009ACE63 /* AddEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00DA7EF2339EC73009ACE63 /* AddEntryViewController.swift */; };
 		B00DA7F22339F27D009ACE63 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00DA7F12339F27D009ACE63 /* EntryViewController.swift */; };
+		B040BE6B233A0FBA002CF6CF /* AddEntryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B040BE6A233A0FBA002CF6CF /* AddEntryResponse.swift */; };
+		B040BE6D233A19E6002CF6CF /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B040BE6C233A19E6002CF6CF /* UIViewController+Ext.swift */; };
 		B0FBF11A2339058D00E10865 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FBF1192339058D00E10865 /* AppDelegate.swift */; };
 		B0FBF1232339058E00E10865 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0FBF1222339058E00E10865 /* Assets.xcassets */; };
 		B0FBF131233907AF00E10865 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FBF130233907AF00E10865 /* Keys.swift */; };
@@ -32,6 +34,8 @@
 		B00DA7ED2339E2A6009ACE63 /* VerticalStackView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VerticalStackView+Ext.swift"; sourceTree = "<group>"; };
 		B00DA7EF2339EC73009ACE63 /* AddEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryViewController.swift; sourceTree = "<group>"; };
 		B00DA7F12339F27D009ACE63 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
+		B040BE6A233A0FBA002CF6CF /* AddEntryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryResponse.swift; sourceTree = "<group>"; };
+		B040BE6C233A19E6002CF6CF /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		B0FBF1162339058D00E10865 /* binet-task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "binet-task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FBF1192339058D00E10865 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0FBF1222339058E00E10865 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 				B0FBF14A2339344A00E10865 /* Session.swift */,
 				B0FBF14E233976C800E10865 /* EntryResponse.swift */,
 				B0FBF1502339787E00E10865 /* ErrorResponse.swift */,
+				B040BE6A233A0FBA002CF6CF /* AddEntryResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -155,6 +160,7 @@
 			children = (
 				B0FBF14123391D3A00E10865 /* UIView+Layout.swift */,
 				B00DA7ED2339E2A6009ACE63 /* VerticalStackView+Ext.swift */,
+				B040BE6C233A19E6002CF6CF /* UIViewController+Ext.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -237,6 +243,8 @@
 				B00DA7F22339F27D009ACE63 /* EntryViewController.swift in Sources */,
 				B0FBF1482339311700E10865 /* RootViewController.swift in Sources */,
 				B0FBF1342339087200E10865 /* AuthenticationManager.swift in Sources */,
+				B040BE6D233A19E6002CF6CF /* UIViewController+Ext.swift in Sources */,
+				B040BE6B233A0FBA002CF6CF /* AddEntryResponse.swift in Sources */,
 				B00DA7EC2339DD86009ACE63 /* MainViewCell.swift in Sources */,
 				B00DA7EE2339E2A6009ACE63 /* VerticalStackView+Ext.swift in Sources */,
 				B0FBF11A2339058D00E10865 /* AppDelegate.swift in Sources */,

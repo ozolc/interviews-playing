@@ -27,12 +27,19 @@ class MainViewController: UIViewController {
         tableView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.safeAreaLayoutGuide.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(handleAddEntry))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(handleGetEntries))
+        
+        self.title = "Айпартнер | бинет"
     }
     
     @objc func handleAddEntry() {
         let controller = AddEntryViewController()
         controller.navigationItem.title = "Добавить новую запись"
         navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @objc func handleGetEntries() {
+        tableView.reloadData()
     }
     
     fileprivate func setupTableView() {
@@ -42,6 +49,11 @@ class MainViewController: UIViewController {
         tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
         tableView.tableFooterView = UIView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        tableView.reloadData()
     }
     
 }
