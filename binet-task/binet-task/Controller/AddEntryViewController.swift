@@ -117,6 +117,7 @@ class AddEntryViewController: UIViewController {
                 print(error.localizedDescription)
             } else {
                 if let data = data {
+                    print(data)
                     completion()
                 }
             }
