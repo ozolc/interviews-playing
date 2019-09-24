@@ -20,18 +20,23 @@ class MainViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        view.backgroundColor = .yellow
+        view.backgroundColor = .white
         setupTableView()
         
         view.addSubview(tableView)
         tableView.fillSuperview()
         
-        print(Constants.tokenId)
+        print(entries?.data.first?.count ?? "")
     }
     
     fileprivate func setupTableView() {
-        tableView.backgroundColor = .yellow
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        tableView.backgroundColor = .white
+        tableView.register(MainViewCell.self, forCellReuseIdentifier: cellId)
+        
+        tableView.separatorStyle = .none
+        tableView.allowsSelection = false
+        tableView.showsVerticalScrollIndicator = false
+        tableView.tableFooterView = UIView()
     }
 }
 
@@ -45,11 +50,11 @@ extension MainViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! MainViewCell
         
         if let entries = entries?.data.first {
             let entry = entries[indexPath.row]
-            cell.textLabel?.text = entry.body
+            cell.entry = entry
         }
         return cell
     }

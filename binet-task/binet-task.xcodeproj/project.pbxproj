@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B00DA7EC2339DD86009ACE63 /* MainViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00DA7EB2339DD86009ACE63 /* MainViewCell.swift */; };
+		B00DA7EE2339E2A6009ACE63 /* VerticalStackView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00DA7ED2339E2A6009ACE63 /* VerticalStackView+Ext.swift */; };
 		B0FBF11A2339058D00E10865 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FBF1192339058D00E10865 /* AppDelegate.swift */; };
 		B0FBF1232339058E00E10865 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0FBF1222339058E00E10865 /* Assets.xcassets */; };
 		B0FBF131233907AF00E10865 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FBF130233907AF00E10865 /* Keys.swift */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B00DA7EB2339DD86009ACE63 /* MainViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewCell.swift; sourceTree = "<group>"; };
+		B00DA7ED2339E2A6009ACE63 /* VerticalStackView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VerticalStackView+Ext.swift"; sourceTree = "<group>"; };
 		B0FBF1162339058D00E10865 /* binet-task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "binet-task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FBF1192339058D00E10865 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0FBF1222339058E00E10865 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,6 +57,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B00DA7EA2339DD6A009ACE63 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B00DA7EB2339DD86009ACE63 /* MainViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		B0FBF10D2339058D00E10865 = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +84,7 @@
 		B0FBF1182339058D00E10865 /* binet-task */ = {
 			isa = PBXGroup;
 			children = (
+				B00DA7EA2339DD6A009ACE63 /* View */,
 				B0FBF14023391D2F00E10865 /* Helper */,
 				B0FBF13D23391BE000E10865 /* Controller */,
 				B0FBF13C23391A5700E10865 /* Resources */,
@@ -135,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				B0FBF14123391D3A00E10865 /* UIView+Layout.swift */,
+				B00DA7ED2339E2A6009ACE63 /* VerticalStackView+Ext.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -215,6 +229,8 @@
 				B0FBF14F233976C800E10865 /* EntryResponse.swift in Sources */,
 				B0FBF1482339311700E10865 /* RootViewController.swift in Sources */,
 				B0FBF1342339087200E10865 /* AuthenticationManager.swift in Sources */,
+				B00DA7EC2339DD86009ACE63 /* MainViewCell.swift in Sources */,
+				B00DA7EE2339E2A6009ACE63 /* VerticalStackView+Ext.swift in Sources */,
 				B0FBF11A2339058D00E10865 /* AppDelegate.swift in Sources */,
 				B0FBF14223391D3A00E10865 /* UIView+Layout.swift in Sources */,
 				B0FBF13923390C2000E10865 /* Constants.swift in Sources */,
