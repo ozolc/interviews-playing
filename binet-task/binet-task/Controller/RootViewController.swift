@@ -23,7 +23,7 @@ class RootViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.isNavigationBarHidden = true
+//        navigationController?.isNavigationBarHidden = true
         
         addChild(current)
         current.view.frame = view.bounds
@@ -32,14 +32,15 @@ class RootViewController: UIViewController {
     }
     
     func switchToMainScreen() {
-        animateFadeTransition(to: mainViewController)
+        let navController = UINavigationController(rootViewController: mainViewController)
+        animateFadeTransition(to: navController)
     }
     
     private func animateFadeTransition(to new: UIViewController, completion: (() -> Void)? = nil) {
         current.willMove(toParent: nil)
         addChild(new)
         
-        transition(from: current, to: new, duration: 0.3, options: [.transitionCrossDissolve, .curveEaseOut], animations: {
+        transition(from: current, to: new, duration: 0.1, options: [.transitionCrossDissolve, .curveEaseOut], animations: {
         }) { completed in
             self.current.removeFromParent()
             new.didMove(toParent: self)
@@ -51,7 +52,7 @@ class RootViewController: UIViewController {
     private func animateDismissTransition(to new: UIViewController, completion: (() -> Void)? = nil) {
         current.willMove(toParent: nil)
         addChild(new)
-        transition(from: current, to: new, duration: 0.3, options: [], animations: {
+        transition(from: current, to: new, duration: 0.1, options: [], animations: {
             new.view.frame = self.view.bounds
         }) { completed in
             self.current.removeFromParent()

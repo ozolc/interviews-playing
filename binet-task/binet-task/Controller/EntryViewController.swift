@@ -1,5 +1,5 @@
 //
-//  MainViewCell.swift
+//  EntryViewController.swift
 //  binet-task
 //
 //  Created by Maksim Nosov on 24/09/2019.
@@ -8,11 +8,15 @@
 
 import UIKit
 
-class MainViewCell: UITableViewCell {
+class EntryViewController: UIViewController {
     
     var entry: EntryResponseData! {
         didSet {
+            
+            navigationItem.title = "Данные о \(entry.id)"
+            
             daTextLabel.text = entry.da
+            print(entry.da)
             
             if entry.da != entry.dm {
                 dmTextLabel.text = entry.dm
@@ -67,27 +71,28 @@ class MainViewCell: UITableViewCell {
         label.font = .systemFont(ofSize: 12, weight: .regular)
         label.textColor = UIColor.black
         label.sizeToFit()
-        label.text = "bodyText"
+        label.text = ""
+        label.numberOfLines = 0
         return label
     }()
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    convenience init(entry: EntryResponseData) {
+        self.init()
+        self.entry = entry
+    }
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        backgroundColor = .white
-        
+        view.backgroundColor = .white
         setupLayout()
     }
     
     fileprivate func setupLayout() {
-        let backgroundView = UIView()
-        
-        backgroundView.layer.borderWidth = 1
-        backgroundView.layer.borderColor = UIColor.black.cgColor
-        backgroundView.layer.cornerRadius = 15
-        
-//        backgroundView.isUserInteractionEnabled = false
-        
         let daStackView = UIStackView(arrangedSubviews: [daLabel, daTextLabel])
         daStackView.distribution = .fill
         daStackView.spacing = 2
@@ -98,12 +103,11 @@ class MainViewCell: UITableViewCell {
         
         let overallStackView = VerticalStackView(arrangedSubviews: [daStackView, dmStackView, bodyLabel], spacing: 2)
         overallStackView.distribution = .fillEqually
-        backgroundView.addSubview(overallStackView)
-        overallStackView.fillSuperview(padding: .init(top: 5, left: 10, bottom: 5, right: 10))
         
-        addSubview(backgroundView)
-        backgroundView.fillSuperview(padding: .init(top: 5, left: 10, bottom: 5, right: 10))
+        view.addSubview(overallStackView)
+        overallStackView.centerInSuperview()
     }
+    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
