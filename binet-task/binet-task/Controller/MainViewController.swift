@@ -12,8 +12,6 @@ class MainViewController: UIViewController {
     
     let cellId = "cellId"
     
-//    private let apiService: APIServiceProtocol!
-    
     let tableView = UITableView()
     
     override func viewDidLoad() {
@@ -43,13 +41,17 @@ extension MainViewController: UITableViewDelegate {
 
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return entries?.data.first?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        
+        if let entries = entries?.data.first {
+            let entry = entries[indexPath.row]
+            cell.textLabel?.text = entry.body
+        }
         return cell
     }
-    
     
 }

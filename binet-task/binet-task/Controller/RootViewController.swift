@@ -11,6 +11,8 @@ import UIKit
 class RootViewController: UIViewController {
     private var current: UIViewController
     
+    var entries = [EntryResponse]()
+    
     init() {
         self.current = SplashViewController()
         super.init(nibName: nil, bundle: nil)

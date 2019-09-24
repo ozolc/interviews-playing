@@ -27,8 +27,6 @@ class APIService: APIServiceProtocol {
             "a": Constants.newSession
             ] as [String : Any]
         
-        print(parameters)
-        
         taskForPOSTMethod(requestURL: requestUrl, parameters: parameters) { (result: Session?, error: Error?) in
             if let error = error {
                 completionHandlerForSessionId(nil, error)

@@ -26,9 +26,9 @@ class SplashViewController: UIViewController {
         
         apiService = APIService(authManager: authManager)
         
-        //        getSessionId()
+        getSessionId()
 //        addEntry(with: "Test text")
-        getEntries()
+//        getEntries()
     }
     
     private func getSessionId() {
@@ -37,16 +37,24 @@ class SplashViewController: UIViewController {
         authManager.setAuthData()
         print(Constants.tokenId)
         
-        apiService.getSessionId(requestUrl: Constants.baseURL, token: Constants.tokenId) { (data, error) in
-            DispatchQueue.main.async {
-                self.activityIndicator.stopAnimating()
-                
-                //                if self.isUserSignedIn() {
-                if let error = error {
-                    print(error.localizedDescription)
-                } else {
-                    if let data = data {
-                        Constants.sessionId = data.data.session
+        apiService.getSessionId(requestUrl: Constants.baseURL, token: Constants.tokenId) { [weak self] (data, error) in
+            
+            guard let self = self else { return }
+            
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                if let data = data {
+                    Constants.sessionId = data.data.session
+                    
+                    if self.isUserSignedIn() {
+                        self.getEntries {
+                            DispatchQueue.main.async {
+                                self.activityIndicator.stopAnimating()
+                                AppDelegate.shared.rootViewController.switchToMainScreen()
+                            }
+                        }
+                        
                     }
                 }
             }
@@ -66,13 +74,16 @@ class SplashViewController: UIViewController {
         }
     }
     
-    private func getEntries() {
+    private func getEntries(completion: @escaping () -> ()) {
         apiService.getEntries(requestUrl: Constants.baseURL, sessionId: "XHGpQZg9J0aG1fhtFy") { (data, error) in
+            
             if let error = error {
                 print(error.localizedDescription)
             } else {
                 if let data = data {
-                    print(data)
+                    entries = data
+//                    print(entries)
+                    completion()
                 }
             }
         }
